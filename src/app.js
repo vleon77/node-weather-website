@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 //Define paht for Express config
 const publicPathDirectory = path.join(__dirname, '../public');
@@ -96,6 +97,6 @@ app.get('*', (req, res) => {
     });
 });
 
-app.listen({ port: 3000 }, () => {
-    console.log('Server Listen port:3000');
+app.listen(port, () => {
+    console.log('Server Listen port:' + port);
 });
